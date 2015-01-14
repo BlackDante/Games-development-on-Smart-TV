@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Games development on Smart TV</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=792, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="themes/warsawjs/styles/ribbon-theme.css">
+    <link rel="stylesheet" href="themes/warsawjs/styles/warsawjs-theme.css">
+</head>
+<body class="list">
+    <header class="caption">
+        <h1>Games development on Smart TV</h1>
+        <p>We talk about JavaScript. Each month in Warsaw, Poland.</p>
+    </header>
+
+    <section class="slide front-page">
+        <div>
+            <div class="logo">
+                <img src="themes/warsawjs/pictures/logo.png">
+            </div>
+            <div class="content">
+                <h2>Games development on Smart TV</h2>
+                <p>Kamil Kiełbasa <a href="http://twitter.com/blackdante90">@blackdante90</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Agenda:</h2>
+            <ul>
+                <li>What is Canvas and WebGL?</li>
+                <li>History of Canvas and WebGL.</li>
+		<li>Everything we need to build a game is HTML 5.</li>
+		<li>Games on Browsers.</li>
+		<li>TV and Games?</li>
+		<li>Support of HTML 5 in Smart TV.</li>
+		<li>Frameworks and examples.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>What is Canvas?</h2>
+            <p><strong>Canvas</strong> element is part of HTML5 and allows for dynamic, scriptable rendering of 2D shapes and bitmap images. It is a low level, procedural model that updates a bitmap and does not have a built-in scene graph.
+            </p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Usage of Canvas.</h2>
+	    <pre>
+		<code><mark class="comment">// html</mark></code>
+                <code>&lt;canvas id="example" width="200" height="200"&gt;&lt;/canvas&gt;</code>
+		<code><mark class="comment">// javascript</mark></code>
+                <code>var example = document.getElementById('example');</code>
+                <code>var context = example.getContext('2d');</code>
+		<code>context.fillStyle = "rgb(255,0,0)";</code>
+		<code>context.fillRect(30, 30, 50, 50);</code>
+            </pre>
+	    <canvas id="example" width="200" height="200" style="margin-top: -67px; margin-left: 316px;"></canvas>
+	    <script>
+		var e = document.getElementById('example');
+		var c = e.getContext('2d');
+		c.fillStyle = "rgb(255,0,0)";
+		c.fillRect(30, 30, 50, 50);
+	    </script>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>What is WebGL?</h2>
+            <p><strong>WebGL (Web Graphics Library)</strong> is a JavaScript API for rendering interactive 3D graphics and 2D graphics within any compatible web browser without the use of plug-ins. WebGL is integrated completely into all the web standards of the browser allowing GPU accelerated usage of physics and image processing and effects as part of the web page canvas. WebGL elements can be mixed with other HTML elements and composited with other parts of the page or page background.
+            </p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>History of WebGL</h2>
+	    <ul>
+                <li>2006 - Vladimir Vukićević create prototype of canvas.</li>
+                <li>2007 - Mozilla and Opera implement canvas.</li>
+		<li>2009 - Khronos Group started the WebGL Working Group.</li>
+		<li>2013 - Start working on WebGL 2 spec.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Everything we need to build a game.</h2>
+	    <ul>
+		<li>Game Engine.</li>
+		<li>Graphic.</li>
+                <li>Audio.</li>
+		<li>Storage.</li>
+		<li>Inputs.</li>
+		<li>Internet connection.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+	    <img src = "./images/horsepower.jpg" style = "width: 100%;"/>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+	    <pre>
+                <code>init();</code>
+                <code>animate();</code>
+                <code></code>
+		<code>function init() {</code>
+		<code><mark class="comment">// game bootstrap</mark></code>
+		<code>}</code>
+                <code>function animate() {</code>
+		<code>    <mark class="important">requestAnimationFrame</mark>( animate );</code>
+		<code><mark class="comment">    // game update</mark> </code>
+		<code>}</code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+	    <img src = "./images/paint.jpg" style = "width: 80%; margin-left: 10%;"/>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Graphics.</h2>
+	    <ul>
+		<li>Three.js</li>
+		<li>ImpactJS</li>
+                <li>EaselJS</li>
+		<li>pixi.js</li>
+		<li>... and many more.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+	    <img src = "./images/audio.png" style = "width: 100%;"/>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>We have audio tag in HTML 5!</h2>
+	    <pre>
+                <code>&lt;audio controls&gt;</code>
+                <code>    &lt;source src="Horse.ogg" type="audio/ogg"&gt;</code>
+                <code>    &lt;source src="Horse.mp3" type="audio/mpeg"&gt;</code>
+		<code>&lt;/audio&gt;</code>
+            </pre>
+	    <audio controls>
+  		<source src="sounds/Horse.mp3" type="audio/mpeg">
+	    </audio>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+	    <img src = "./images/storage.jpg" style = "width: 80%; margin-left: 10%;"/>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Storage is also in HTML 5!</h2>
+	    <pre>
+		<code><mark class="comment">// getting from storage.</mark></code>
+                <code>var foo = localStorage.getItem("bar");</code>
+		<code><mark class="comment">// save to storage.</mark></code>
+                <code>localStorage.setItem("bar", foo);</code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+	    <img src = "./images/inputs.jpg" style = "width: 80%; margin-left: 10%;"/>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>emm... Events?</h2>
+	    <pre>
+                <code>el.addEventListener("click", function () { </code>
+		<code><mark class="comment">   // some actions.</mark></code>
+                <code>});</code>
+            </pre>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+	    <img src = "./images/internet.jpg" style = "width: 80%; margin-left: 10%; margin-top: -10%;"/>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Internet Connection.</h2>
+	    <ul>
+		<li>WebSockets</li>
+		<li>WebRTC</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section class="slide">
+        <div>
+            <h2>Games on Browser.</h2>
+	    <ul>
+		<li>Fun to develop.</li>
+		<li>Fast deplyoment.</li>
+                <li>Great library like Three.js, Kinetic.js, Physics.js, Impact.js.</li>
+		<li>Great debugging tools.</li>
+		<li>Many resources and examples.</li>
+		<li>Wide support.</li>
+            </ul>
+	    <div id="runner"></div>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+	     <iframe src="http://www.themaninblue.com/experiment/BunnyHunt/" style="width: 100%;
+height: 106%;"></iframe>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+	     <iframe src="https://www.cubeslam.com/" style="width: 100%;
+height: 100%; margin-top: -7%;"></iframe>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>TV and Games?</h2>
+	        <p style = "text-align: center">
+		    <img src = "./images/games.jpg" />
+		</p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Browser vs Smart TV.</h2>
+	    <h3>Browser advantages:</h3>
+	    <ul>
+		<li>Debugging.</li>
+		<li>Performance.</li>
+                <li>Tutorials.</li>
+		<li>Controllers.</li>
+		<li>Users.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Browser vs Smart TV.</h2>
+	    <h3>Smart TV advantages:</h3>
+	    <ul>
+		<li>Convergence.</li>
+		<li>Big Screen.</li>
+		<li>Gestures recognition.</li>
+		<li>Voice recognition.</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section class="slide">
+        <div>
+            <h2>Why not TV and mobile Games?</h2>
+	        <p style = "text-align: center">
+			<img src = "./images/airForce.jpg" />
+		</p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+            <h2>Support of HTML 5 in Smart TV.</h2>
+	    <ul>
+		<li>HTML5 The canvas element (Partial)</li>
+		<li>HTML Canvas 2D Context (Partial)</li>
+		<li>HTML5 SVG</li>
+		<li>HTML5 The video element (Partial)</li>
+		<li>HTML5 The audio element (Partial)</li>
+		<li>File API</li>
+		<li>... and many more.</li>
+	    <ul>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+	    <img src = "./images/3D.jpg" style = "width: 100%;"/>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+	    <img src = "./images/partials.jpg" style = "width: 100%;"/>
+        </div>
+    </section>
+
+    <section class="slide">
+        <div>
+	    <img src = "./images/demo.jpg" style = "width: 100%; margin-top: -10%"/>
+        </div>
+    </section>
+
+    <section class="slide shout">
+        <div>
+            <h2>See you next month at WarsawJS</h2>
+        </div>
+    </section>
+
+    <p class="badge"><a href="https://github.com/warsawjs/presentation-template">Fork me on Github</a></p>
+
+    <div class="progress">
+        <div></div>
+    </div>
+
+    <script src="vendor/gamepad/gamepad.js"></script>
+    <script src="vendor/shower/shower.js"></script>
+    <script src="vendor/shower/shower.gamepad.js"></script>
+    <script src="scripts/libs/Three.js"></script>
+    <script src="scripts/libs/Detector.js"></script>
+    <script src="scripts/libs/Stats.js"></script>
+    <script src="scripts/libs/OrbitControls.js"></script>
+    <script src="scripts/libs/THREEx.KeyboardState.js"></script>
+    <script src="scripts/libs/THREEx.FullScreen.js"></script>
+    <script src="scripts/libs/THREEx.WindowResize.js"></script>
+    <script src="scripts/runner.js"></script>
+</body>
+</html>
